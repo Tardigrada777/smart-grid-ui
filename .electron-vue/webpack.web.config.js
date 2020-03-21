@@ -1,20 +1,20 @@
-'use strict'
+'use strict';
 
-process.env.BABEL_ENV = 'web'
+process.env.BABEL_ENV = 'web';
 
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
-const MinifyPlugin = require("babel-minify-webpack-plugin")
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 let webConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    web: path.join(__dirname, '../src/renderer/main.js')
+    web: path.join(__dirname, '../src/renderer/main.ts')
   },
   module: {
     rules: [
@@ -111,13 +111,13 @@ let webConfig = {
     extensions: ['.js', '.vue', '.json', '.css']
   },
   target: 'web'
-}
+};
 
 /**
  * Adjust webConfig for production settings
  */
 if (process.env.NODE_ENV === 'production') {
-  webConfig.devtool = ''
+  webConfig.devtool = '';
 
   webConfig.plugins.push(
     new MinifyPlugin(),
@@ -137,4 +137,4 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
-module.exports = webConfig
+module.exports = webConfig;

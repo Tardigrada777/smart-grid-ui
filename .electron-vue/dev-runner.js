@@ -46,18 +46,18 @@ function startRenderer () {
     hotMiddleware = webpackHotMiddleware(compiler, {
       log: false,
       heartbeat: 2500
-    })
+    });
 
     compiler.hooks.compilation.tap('compilation', compilation => {
       compilation.hooks.htmlWebpackPluginAfterEmit.tapAsync('html-webpack-plugin-after-emit', (data, cb) => {
-        hotMiddleware.publish({ action: 'reload' })
+        hotMiddleware.publish({ action: 'reload' });
         cb()
       })
-    })
+    });
 
     compiler.hooks.done.tap('done', stats => {
       logStats('Renderer', stats)
-    })
+    });
 
     const server = new WebpackDevServer(
       compiler,
@@ -65,7 +65,7 @@ function startRenderer () {
         contentBase: path.join(__dirname, '../'),
         quiet: true,
         before (app, ctx) {
-          app.use(hotMiddleware)
+          app.use(hotMiddleware);
           ctx.middleware.waitUntilValid(() => {
             resolve()
           })
@@ -79,29 +79,29 @@ function startRenderer () {
 
 function startMain () {
   return new Promise((resolve, reject) => {
-    mainConfig.entry.main = [path.join(__dirname, '../src/main/index.dev.js')].concat(mainConfig.entry.main)
-    mainConfig.mode = 'development'
-    const compiler = webpack(mainConfig)
+    mainConfig.entry.main = [path.join(__dirname, '../src/main/index.dev.js')].concat(mainConfig.entry.main);
+    mainConfig.mode = 'development';
+    const compiler = webpack(mainConfig);
 
     compiler.hooks.watchRun.tapAsync('watch-run', (compilation, done) => {
-      logStats('Main', chalk.white.bold('compiling...'))
-      hotMiddleware.publish({ action: 'compiling' })
+      logStats('Main', chalk.white.bold('compiling...'));
+      hotMiddleware.publish({ action: 'compiling' });
       done()
-    })
+    });
 
     compiler.watch({}, (err, stats) => {
       if (err) {
-        console.log(err)
+        console.log(err);
         return
       }
 
-      logStats('Main', stats)
+      logStats('Main', stats);
 
       if (electronProcess && electronProcess.kill) {
-        manualRestart = true
-        process.kill(electronProcess.pid)
-        electronProcess = null
-        startElectron()
+        manualRestart = true;
+        process.kill(electronProcess.pid);
+        electronProcess = null;
+        startElectron();
 
         setTimeout(() => {
           manualRestart = false
@@ -117,7 +117,7 @@ function startElectron () {
   var args = [
     '--inspect=5858',
     path.join(__dirname, '../dist/electron/main.js')
-  ]
+  ];
 
   // detect yarn or npm and process commandline args accordingly
   if (process.env.npm_execpath.endsWith('yarn.js')) {
