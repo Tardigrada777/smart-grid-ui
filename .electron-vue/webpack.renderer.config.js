@@ -57,6 +57,14 @@ let rendererConfig = {
         exclude: /node_modules/
       },
       {
+        test: /\.ts$/,
+        use: {
+          loader: "ts-loader",
+          options: { appendTsSuffixTo: [/\.vue$/] }
+        },
+        exclude: /node_modules/,
+      },
+      {
         test: /\.node$/,
         use: 'node-loader'
       },
@@ -136,7 +144,7 @@ let rendererConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node']
+    extensions: ['.js', '.vue', '.json', '.css', '.node', '.ts']
   },
   target: 'electron-renderer'
 }
