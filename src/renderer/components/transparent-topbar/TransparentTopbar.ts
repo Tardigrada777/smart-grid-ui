@@ -1,4 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
+import { remote } from 'electron';
 
 
 @Component
@@ -9,5 +10,12 @@ export default class TransparentTopbar extends Vue {
      */
     public clickHandler() {
         this.$emit('toggle-sidedrawer');
+    }
+
+    /**
+     * Closes main window.
+     */
+    public close() {
+        remote.getCurrentWindow().close();
     }
 }

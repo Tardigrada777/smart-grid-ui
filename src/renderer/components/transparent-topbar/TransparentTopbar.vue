@@ -16,6 +16,7 @@
       small
       text
       color="error"
+      @click="close"
     >
       <v-icon>mdi-close</v-icon>
     </v-btn>
