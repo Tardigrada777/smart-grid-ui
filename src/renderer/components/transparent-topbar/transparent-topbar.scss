@@ -2,4 +2,11 @@
   display: flex;
   justify-content: space-between;
   padding: 15px;
+
+  // drag-and-drop zone
+  -webkit-app-region: drag;
+
+  &__action-btn {
+    -webkit-app-region: no-drag;
+  }
 }
