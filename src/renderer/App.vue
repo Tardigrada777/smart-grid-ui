@@ -6,8 +6,7 @@
     </div>
 
     <v-navigation-drawer app v-model="drawer">
-      <!-- -->
-      <h1>Drawer</h1>
+      <DrawerMenu />
     </v-navigation-drawer>
 
     <!-- Sizes your content based upon application components -->
