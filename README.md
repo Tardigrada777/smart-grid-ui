@@ -29,8 +29,8 @@ __docs__ - all stuff about documentation, licence, todos etc.
 
 #### Screenshots
 
-<img width="300" src="https://raw.githubusercontent.com/Tardigrada777/dictyper/master/static/screen1.png">
-<img width="300" src="https://raw.githubusercontent.com/Tardigrada777/dictyper/master/static/screen2.png">
+<img width="300" src="https://raw.githubusercontent.com/Tardigrada777/smart-grid-ui/master/static/screen1.png">
+<img width="300" src="https://raw.githubusercontent.com/Tardigrada777/smart-grid-ui/master/static/screen2.png">
 
 ---
 
