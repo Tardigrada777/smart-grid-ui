@@ -17,6 +17,16 @@ npm run build
 
 ```
 
+#### Namespaces
+
+__ui__ - user interface, visual components etc.
+
+__bundle__ - webpack, electron, etc. configurations
+
+__core__ - logic for interact with file system, smart-grid etc.
+
+__docs__ - all stuff about documentation, licence, todos etc.
+
 ---
 
 This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
