@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <h1>Transparent Topbar</h1>
+  <div class="transparent-topbar">
+    <v-btn fab small text @click="clickHandler">
+      <v-icon>mdi-menu</v-icon>
+    </v-btn>
+
+    <v-btn fab small text color="error">
+      <v-icon>mdi-close</v-icon>
+    </v-btn>
   </div>
 </template>
 

@@ -1,6 +1,5 @@
 <template>
   <div class="grid-settings">
-    <v-btn color="primary" @click="gen">generate</v-btn>
   </div>
 </template>
 

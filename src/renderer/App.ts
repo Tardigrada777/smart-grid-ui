@@ -8,5 +8,13 @@ import TransparentTopbar from './components/transparent-topbar/TransparentTopbar
     }
 })
 export default class App extends Vue {
-    public title: string = 'SmartGrid UI';
+
+    /**
+     * Indicates if drawer should be opened or not.
+     */
+    public drawer: boolean = false;
+
+    public toggleDrawer() {
+        this.drawer = !this.drawer;
+    }
 }
