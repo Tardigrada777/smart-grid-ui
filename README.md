@@ -31,6 +31,7 @@ __docs__ - all stuff about documentation, licence, todos etc.
 
 <img width="600" src="https://raw.githubusercontent.com/Tardigrada777/smart-grid-ui/master/static/screen1.png">
 <img width="600" src="https://raw.githubusercontent.com/Tardigrada777/smart-grid-ui/master/static/screen2.png">
+<img width="600" src="https://raw.githubusercontent.com/Tardigrada777/smart-grid-ui/master/static/screen3.png">
 
 ---
 
