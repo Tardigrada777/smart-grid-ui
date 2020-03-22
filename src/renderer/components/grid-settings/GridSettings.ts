@@ -6,4 +6,7 @@ export default class GridSettings extends Vue {
     public get screenInfo() {
         return screen.getCursorScreenPoint();
     }
+
+    public gen() {
+    }
 }
